@@ -17,11 +17,15 @@ func main(){
 func PopCount(x uint64) int{
 	var mask uint64 = 1
 	var count int = 0
-	for i := 0; i < 64; i++{
-		if (x & mask) == 1{
-			count ++
+	
+		for i := 0; i < 64; i++{
+			if (x & mask) == 1{
+				count ++
+			}
+			x = x >> 1
 		}
-		x = x >> 1
-	}
+	
 	return count
 }
+
+
